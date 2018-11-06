@@ -2,13 +2,11 @@
 My first flux-based framework
 
 ## Installation
-
 ```
 npm i -D ajmdag/flux-framework
 ```
 
 ## Development
-
 ```
 git clone https://github.com/Ajmdag/flux-framework.git
 cd flux-framework
@@ -18,20 +16,19 @@ npm i
 # Documentation
 
 ## Install
-
 To use this library, you should create Store instance.
 ```js
 const Store = require('flux-framework');
 
-const store = new Store(reducer, initialState);
+const store = new Store(stateUpdator, initialState);
 ```
-`reducer` and `initialState` are required.
+`stateUpdator` and `initialState` are required.
 
-### reducer
-`reducer` is a function that knows how to change state, depending on the input data. Should return new state.
+### stateUpdator
+`stateUpdator` is a function that knows how to change state, depending on the input data. Should return new state.
 
 ```js
-function reducer(state, action) {
+function stateUpdator(state, action) {
   switch(action.type) {
   case 'INCREMENT':
     return { count: state.count + action.amount };
@@ -49,4 +46,35 @@ function reducer(state, action) {
 const initialState = {
   count: 0
 };
+```
+
+### create actions
+```js
+const incrementAction = { type: "INCREMENT", amount: 3 };
+const decrementAction = { type: "DECREMENT", amount: 5 };
+```
+
+### udpate store with actions
+```js
+store.update(incrementAction);
+store.update(decrementAction);
+```
+
+### subscribe
+`subscribe(callback)`. `callback` is a function that will be called when store will be changed.
+```js
+store.subscribe(() => console.log("State changed", store.state));
+```
+
+### unsubscribe
+To unsubscribe from store changes just put `store.subscribe(callback)` in a variable(or constant) and call it as a function.
+```js
+const unsubscribe = store.subscribe(() => console.log("State changed", store.state));
+unsubscribe();
+```
+
+### getState
+To get a store state use this method:
+```js
+store.getState();
 ```
