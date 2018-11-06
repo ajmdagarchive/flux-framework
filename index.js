@@ -1,2 +1,2 @@
-import Store from './library/store';
-export default Store;
+const Store = require('./library/store');
+module.exports = Store;

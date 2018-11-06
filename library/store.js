@@ -1,4 +1,4 @@
-export default class Store {
+module.exports =  class Store {
   constructor(updateState, state) {
     this._updateState = updateState;
     this._state = state;
@@ -20,4 +20,4 @@ export default class Store {
     this._callbacks.push(callback);
     return () => this._callbacks = this._callbacks.filter(cb => cb !== callback);
   }
-}
+};
