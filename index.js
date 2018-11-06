@@ -1,2 +1,1 @@
-const Store = require('./library/store');
-module.exports = Store;
+module.exports = require('./library/store');
