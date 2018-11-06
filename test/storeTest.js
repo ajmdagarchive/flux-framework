@@ -1,4 +1,4 @@
-const Store = require('../library/Store');
+const Store = require('../index.js');
 const { assert, expect } = require('chai');
 
 describe('check store', () => {
