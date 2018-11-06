@@ -15,7 +15,7 @@ npm i
 
 # Documentation
 
-## Install
+## Usage
 To use this library, you should create Store instance.
 ```js
 const Store = require('flux-framework');
