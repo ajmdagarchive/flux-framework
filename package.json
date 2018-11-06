@@ -19,5 +19,6 @@
   "homepage": "https://github.com/Ajmdag/flux-framework#readme",
   "devDependencies": {
     "eslint": "^5.8.0"
-  }
+  },
+  "dependencies": {}
 }
