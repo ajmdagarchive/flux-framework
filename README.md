@@ -1,6 +1,8 @@
 # flux-framework
 My first flux-based framework
 
+[![Build Status](https://travis-ci.org/Ajmdag/flux-framework.svg?branch=master)](https://travis-ci.org/Ajmdag/flux-framework)
+
 ## Installation
 ```
 npm i -D ajmdag/flux-framework
