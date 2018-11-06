@@ -1,4 +1,4 @@
-module.exports =  class Store {
+module.exports = class Store {
   constructor(updateState, state) {
     this._updateState = updateState;
     this._state = state;
