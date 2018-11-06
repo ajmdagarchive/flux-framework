@@ -1,0 +1,23 @@
+{
+  "name": "flux-framework",
+  "version": "1.0.0",
+  "description": "My first flux-based framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ajmdag/flux-framework.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ajmdag/flux-framework/issues"
+  },
+  "homepage": "https://github.com/Ajmdag/flux-framework#readme",
+  "devDependencies": {
+    "eslint": "^5.8.0"
+  }
+}
