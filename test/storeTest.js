@@ -4,18 +4,18 @@ const { assert, expect } = require('chai');
 describe('check store', () => {
   it('созданный store - объект', () => {
     const initialState = {};
-    const reducer = () => {};
+    const updateState = () => {};
 
-    const store = new Store(reducer, initialState);
+    const store = new Store(updateState, initialState);
 
     assert.isObject(store);
   });
 
   it('начальное состоянее совпадает с store.getState', () => {
-    const reducer = () => ({});
+    const updateState = () => ({});
     const initialState = {a: 1, b: {c: 2, d: 3}};
 
-    const store = new Store(reducer, initialState);
+    const store = new Store(updateState, initialState);
     assert.deepEqual(initialState, store.getState);
   });
 
@@ -23,20 +23,20 @@ describe('check store', () => {
     const initialState = {
       count: 5
     };
-    const reducer = () => {};
+    const updateState = () => {};
 
-    const store = new Store(reducer, initialState);
+    const store = new Store(updateState, initialState);
 
     expect(store.getState.count).to.be.equal(5);
   });
 
   it('subscribe вызывается ровно столько раз, сколько store.update', () => {
     const initialState = {};
-    const reducer = () => {};
+    const updateState = () => {};
 
     let subscribeWorks = [];
 
-    const store = new Store(reducer, initialState);
+    const store = new Store(updateState, initialState);
 
     store.subscribe(() => subscribeWorks.push(1));
 
@@ -48,11 +48,11 @@ describe('check store', () => {
 
   it('вызов unsubscribe() прекращает вызов коллбэка на store.update()', () => {
     const initialState = {};
-    const reducer = () => {};
+    const updateState = () => {};
 
     let subscribeWorks = [];
 
-    const store = new Store(reducer, initialState);
+    const store = new Store(updateState, initialState);
 
     const unsubscribeMePlease = store.subscribe(() => subscribeWorks.push(1));
 
