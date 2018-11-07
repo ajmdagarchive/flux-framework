@@ -78,5 +78,5 @@ unsubscribe();
 ### getState
 To get a store state use this method:
 ```js
-store.getState();
+store.getState;
 ```
