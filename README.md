@@ -20,7 +20,7 @@ npm i
 ## Usage
 To use this library, you should create Store instance.
 ```js
-const Store = require('flux-framework');
+import Store from 'flux-framework';
 
 const store = new Store(stateUpdator, initialState);
 ```
