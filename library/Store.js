@@ -1,23 +1,21 @@
-module.exports = class Store {
+export default class Store {
   constructor(updateState, state) {
-    this._updateState = updateState;
-    this._state = state;
-    this._callbacks = [];
+    this.updateState = updateState;
+    this.state = state;
+    this.callbacks = [];
   }
-
   get getState() {
-    return this._state;
+    return this.state;
   }
-
   update(action) {
-    this._state = this._updateState(this._state, action);
-    this._callbacks.forEach(cb => {
+    this.state = this.updateState(this.state, action);
+    this.callbacks.forEach(cb => {
       cb();
     });
   }
-
   subscribe(callback) {
-    this._callbacks.push(callback);
-    return () => this._callbacks = this._callbacks.filter(cb => cb !== callback);
+    this.callbacks.push(callback);
+    return () =>
+      (this.callbacks = this.callbacks.filter(cb => cb !== callback));
   }
-};
+}
