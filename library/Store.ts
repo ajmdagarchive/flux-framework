@@ -15,13 +15,14 @@ export default class Store<A extends object, S extends object> {
 
   public update(action: object) {
     this.state = this.updateState(this.state, action);
-    this.callbacks.forEach((cb) => {
+    this.callbacks.forEach(cb => {
       cb();
     });
   }
 
   public subscribe(callback: () => void) {
     this.callbacks.push(callback);
-    return () => this.callbacks = this.callbacks.filter((cb) => cb !== callback);
+    return () =>
+      (this.callbacks = this.callbacks.filter(cb => cb !== callback));
   }
 }
