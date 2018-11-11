@@ -1,2 +1,2 @@
-import Store from './library/Store';
+import Store from './library/ts/Store';
 export default Store;
